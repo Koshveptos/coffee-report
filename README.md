@@ -18,19 +18,19 @@ uv run coffee-report --files data/session.csv --report median-coffee
 Пример работы с корректными данными
 
 для одного файла
-![Описание картинки](coffee-report\img\god_example.png)
+![Описание картинки](img/god_example.png)
 
 
 для нескольких
-![Описание картинки](img\example_one.png)
+![Описание картинки](img/example_one.png)
 
 Пример работы для не верных файлов\параметров
-![Описание картинки](img\bad_examples.png)
+![Описание картинки](img/bad_examples.png)
 
 
 
 Так же было проведено тестирование, покрытие
-![Описание картинки](img\test_cover.png)
+![Описание картинки](img/test_cover.png)
 
 
 Архитектура проекта
