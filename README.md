@@ -18,7 +18,7 @@ uv run coffee-report --files data/session.csv --report median-coffee
 Пример работы с корректными данными
 
 для одного файла
-![Описание картинки](img\god_example.png)
+![Описание картинки](coffee-report\img\god_example.png)
 
 
 для нескольких
