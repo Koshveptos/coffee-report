@@ -1,5 +1,3 @@
-"""Тесты для модуля formatter.py."""
-
 from typing import Any
 
 import pytest

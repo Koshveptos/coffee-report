@@ -1,5 +1,3 @@
-"""Тесты для модуля loader.py."""
-
 from datetime import date
 from pathlib import Path
 

@@ -1,5 +1,3 @@
-"""Тесты для отчета MedianCoffeeReport."""
-
 from datetime import date
 from typing import Any
 

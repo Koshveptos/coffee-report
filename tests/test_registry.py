@@ -1,11 +1,17 @@
-"""Тесты для ReportRegistry."""
-
 from typing import Any
 
 import pytest
 from coffee_report.models import StudentRecord
 from coffee_report.reports.base import BaseReport
 from coffee_report.reports.registry import ReportRegistry
+
+
+class TestReport(BaseReport):  # type: ignore[misc]
+    name = "test-report"
+    columns = ["Test"]
+
+    def execute(self, records: list[StudentRecord]) -> list[list[Any]]:
+        return []
 
 
 def test_registry_list_available() -> None:
@@ -24,12 +30,5 @@ def test_registry_get_invalid() -> None:
 
 
 def test_registry_register_returns_class() -> None:
-    class TestReport(BaseReport):
-        name = "test-report"
-        columns = ["Test"]
-
-        def execute(self, records: list[StudentRecord]) -> list[list[Any]]:
-            return []
-
     result: type[BaseReport] = ReportRegistry.register(TestReport)
     assert result == TestReport

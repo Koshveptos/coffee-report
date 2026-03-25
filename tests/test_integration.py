@@ -1,5 +1,3 @@
-"""Интеграционные тесты полного пайплайна."""
-
 from pathlib import Path
 from typing import Any
 
