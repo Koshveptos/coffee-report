@@ -10,7 +10,7 @@ from coffee_report.reports.registry import ReportRegistry
 @ReportRegistry.register
 class MedianCoffeeReport(BaseReport):
     name = "median-coffee"
-    columns = ["Студент", "Медиана трат "]
+    columns = ["Студент", "Медиана трат"]
 
     def execute(self, records: list[StudentRecord]) -> list[list[Any]]:
         spending_by_student: dict[str, list[int]] = defaultdict(list)

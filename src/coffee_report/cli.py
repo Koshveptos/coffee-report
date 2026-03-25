@@ -14,10 +14,10 @@ def parse_args() -> argparse.Namespace:
 def validate_files(filepaths: list[Path]) -> None:
     for filepath in filepaths:
         if not filepath.exists():
-            raise FileNotFoundError(f"File not found! {filepath}")
+            raise FileNotFoundError(f"Файл не найден {filepath}")
 
 
 def validate_report(report_name: str) -> None:
     available = ReportRegistry.list_available()
     if report_name not in available:
-        raise ValueError(f"Такого отчета нет {report_name}" f"Вот доступные {' '.join(available)}")
+        raise ValueError(f"Отчет '{report_name}' не найден. Доступные: {', '.join(available)}")

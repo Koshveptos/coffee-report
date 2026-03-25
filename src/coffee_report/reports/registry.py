@@ -19,7 +19,7 @@ class ReportRegistry:
         # создает и возвращяет экземпляр  по имени
         if name not in cls._reports:
             available = " ".join(sorted(cls._reports.keys()))
-            raise ValueError(f"Отчета {name} нет, вот доступные - {available}")
+            raise ValueError(f"Отчет '{name}' не найден. Доступные: {available}")
         return cls._reports[name]()
 
     @classmethod

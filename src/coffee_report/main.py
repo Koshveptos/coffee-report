@@ -2,7 +2,7 @@ import sys
 
 from coffee_report.cli import parse_args, validate_files, validate_report
 from coffee_report.formatter import print_table
-from coffee_report.loader import load_all_files
+from coffee_report.loader import FileReadError, load_all_files
 from coffee_report.reports.registry import ReportRegistry
 
 
@@ -17,8 +17,14 @@ def cli() -> None:
         report = ReportRegistry.get(args.report)
         rows = report.execute(records)
         print_table(report.columns, rows)
-    except (FileNotFoundError, ValueError) as e:
-        print(f"Error {e}", file=sys.stderr)
+    except FileNotFoundError as e:
+        print(f"Error: {e}", file=sys.stderr)
+        sys.exit(1)
+    except ValueError as e:
+        print(f"Error: {e}", file=sys.stderr)
+        sys.exit(1)
+    except FileReadError as e:
+        print(f"Error: {e}", file=sys.stderr)
         sys.exit(1)
 
 
