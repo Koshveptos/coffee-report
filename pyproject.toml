@@ -9,6 +9,7 @@ authors = [
 requires-python = ">=3.13"
 dependencies = [
     "tabulate>=0.10.0",
+    "types-tabulate>=0.10.0.20260308",
 ]
 
 [build-system]
@@ -22,6 +23,7 @@ dev = [
     "pytest>=9.0.2",
     "pytest-cov>=7.1.0",
     "ruff>=0.15.7",
+    "types-tabulate>=0.10.0.20260308",
 ]
 
 

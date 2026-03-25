@@ -1,24 +1,17 @@
-from abc import abstractmethod
+from abc import ABC, abstractmethod
 from typing import Any
 
 from coffee_report.models import StudentRecord
 
 
-class BaseReport:
+class BaseReport(ABC):
     """Базовый класс для всех отчетов в случае расширения
     любой отчет построенный на данном базовом классе должен иметь обязательно -
     уникальное имя для CLI, колонки и свою реализацию расчета отчета
     """
 
-    @property
-    @abstractmethod
-    def name(self) -> str:
-        pass
-
-    @property
-    @abstractmethod
-    def columns(self) -> list[str]:
-        pass
+    name: str
+    columns: list[str]
 
     @abstractmethod
     def execute(self, records: list[StudentRecord]) -> list[list[Any]]:

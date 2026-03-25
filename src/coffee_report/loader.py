@@ -17,7 +17,7 @@ def load_csv_file(filepath: Path) -> list[StudentRecord]:
             record = StudentRecord(
                 student=row["student"],
                 date=parse_date(row["date"]),
-                coffee_spent=int(row["coffee_apent"]),
+                coffee_spent=int(row["coffee_spent"]),
                 sleep_hours=float(row["sleep_hours"]),
                 study_hours=int(row["study_hours"]),
                 mood=row["mood"],
